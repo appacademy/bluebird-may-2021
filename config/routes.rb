@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # patch "/chirps/:id", to: "chirps#update"
   # delete "/chirps/:id", to: "chirps#destroy"
 
-  resources :chirps, except: [:new, :edit]
+  resources :chirps
 
 
 end

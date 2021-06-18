@@ -1,0 +1,12 @@
+<marquee behavior="" direction="">Look at all these chirps</marquee>
+
+<ul>
+  <% @chirps.each do |chirp| %>
+    <ul>
+      <%= render 'chirp', chirp: chirp, form: :index %>
+      <br/>
+    </ul>
+  <% end %>
+  
+  <%#= render @chirps %>
+</ul>

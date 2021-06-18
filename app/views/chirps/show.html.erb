@@ -1,0 +1,18 @@
+<h1>LOOK AT THIS CHIRP</h1>
+
+<%# ERB-VSCode-Snippets %>
+<%# er  %> 
+<%#= pe %>
+
+<%# Simple Ruby ERB %>
+<%# ctrl + shift + ` %>
+
+<ul>
+  <%= render 'chirp', chirp: @chirp, form: :show %>
+  <%#= render @chirp %>
+</ul>
+
+<form action="<%= chirp_url(@chirp) %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="slap this chirp">
+</form>
