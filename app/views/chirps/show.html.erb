@@ -8,6 +8,11 @@
 <%# ctrl + shift + ` %>
 
 <ul>
-  <%#= render 'chirp', chirp: @chirp %>
-  <%= render @chirp %>
+  <%= render 'chirp', chirp: @chirp, form: :show %>
+  <%#= render @chirp %>
 </ul>
+
+<form action="<%= chirp_url(@chirp) %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="slap this chirp">
+</form>

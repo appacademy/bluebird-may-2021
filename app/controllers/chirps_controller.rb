@@ -13,6 +13,12 @@ class ChirpsController < ApplicationController
     render :show
   end
 
+  def new
+    # generating a new chirp as a placeholder, has a body and author_id key, makes template happy
+    @chirp = Chirp.new
+    render :new
+  end
+
   def create
     # debugger
     @chirp = Chirp.new(chirp_params)
@@ -21,8 +27,14 @@ class ChirpsController < ApplicationController
       # redirect_to "localhost:3000/chirps/#{@chirp.id}"
       redirect_to chirp_url(@chirp)
     else
-      render json: @chirp.errors.full_messages, status: 422
+      # render json: @chirp.errors.full_messages, status: 422
+      render :new
     end
+  end
+
+  def edit
+    @chirp = Chirp.find(params[:id])
+    render :edit
   end
 
   def update
@@ -30,7 +42,8 @@ class ChirpsController < ApplicationController
     if @chirp.update(chirp_params)
       redirect_to chirp_url(@chirp)
     else
-      render json: @chirp.errors.full_messages, status: 422
+      # render json: @chirp.errors.full_messages, status: 422
+      render :edit
     end
   end
 

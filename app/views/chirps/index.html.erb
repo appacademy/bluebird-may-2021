@@ -3,7 +3,7 @@
 <ul>
   <% @chirps.each do |chirp| %>
     <ul>
-      <%= render 'chirp', chirp: chirp %>
+      <%= render 'chirp', chirp: chirp, form: :index %>
       <br/>
     </ul>
   <% end %>
