@@ -1,18 +1,20 @@
 class ChirpsController < ApplicationController
 
   def index
-    @chirps = Chirp.all
-    render json: @chirps
+    @chirps = Chirp.all.includes(:author, :likes)
+    # render json: @chirps
+    render :index
   end
 
   def show
-    debugger
+    # debugger
     @chirp = Chirp.find(params[:id])
-    render json: @chirp
+    # render json: @chirp
+    render :show
   end
 
   def create
-    debugger
+    # debugger
     @chirp = Chirp.new(chirp_params)
     if @chirp.save
       # redirect_to chirp_url(@chirp.id)
