@@ -1,0 +1,30 @@
+<% if action == :new %>
+  <% action_url = users_url %>
+<% else %>
+  <% action_url = user_url(user) %>
+<% end %>
+
+<form action="<%= action_url %>" method="post">
+  <% if action == :edit %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <label for="username">Username: </label>
+  <input id="username" type="text" name="user[username]" value="<%= user.username %>">
+  <br>
+
+  <label for="age">age: </label>
+  <input id="age" type="text" name="user[age]" value="<%= user.age %>">
+  <br>
+  <label for="political_affiliation">political_affiliation: </label>
+  <input id="political_affiliation" type="text" name="user[political_affiliation]" value="<%= user.political_affiliation %>">
+  <br>
+
+
+  <label>Password
+    <input type="password" name="user[password]" value="">
+  </label>
+  <br>
+  <input type="submit" value="<%= action == :new ? "Sign Up" : "Update User" %>">
+
+</form>

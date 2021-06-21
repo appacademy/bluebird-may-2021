@@ -10,19 +10,19 @@
   # Instructors
   User.destroy_all
   
-  ayce = User.create!(username: "ayce_in_cyberspace", age: 11, political_affiliation: "Ruby", email: "cyberacye@aa.io", password: "password")
-  walker = User.create!(username: "wakka_wakka", age: 11, political_affiliation: "JavaScript", email: "wakka@wakka.walking", password: "password")
-  mike = User.create!(username: "like_mike", age: 11, political_affiliation: "Ruby", email: "mike@aa.io", password: "password")
-  andy = User.create!(username: "andy_crushinit_huang", age: 11, political_affiliation: "JavaScript", email: "acrush@aa.io", password: "password")
-  jack = User.create!(username: "the_jack", age: 11, political_affiliation: "Ruby", email: "jack@aa.io", password: "password")
-  charis = User.create!(username: "charis_the_chairis", age: 11, political_affiliation: "JavaScript", email: "i_luv_goldfish@aa.io", password: "password")
-  jordan = User.create!(username: "loves_pups", age: 11, political_affiliation: "JavaScript", email: "chosenone@aa.io, password: "password"")
-  elliot = User.create!(username: "all_knowing_elliot", age: 11, political_affiliation: "C", email: "those_are_teef@aa.io, password: "password"")
-  ryan = User.create!(username: "will_climb_rocks", age: 11, political_affiliation: "JavaScript" , email: "boulderz@aa.io, password: "password"")
-  charlos = User.create!(username: "charlos_gets_buckets", age: 11, political_affiliation: "Ruby", email: "ballin@aa.io, password: "password"")
-  alissa = User.create!(username: "cow_luva", age: 11, political_affiliation: "JavaScript" , email: "cows@aa.io, password: "password"")
-  joe = User.create!(username: "trader_joes_4lyf3", age: 11, political_affiliation: "Ruby", email: "thetraderjoe@aa.io, password: "password"")
-  big_company = User.create!(username: "instructors_rock", age: 52, political_affiliation: "Instructors", email: "giveus@money.now, password: "password"")
+  ayce = User.create!(username: "ayce_in_cyberspace", age: 11, political_affiliation: "Ruby", password: "password")
+  walker = User.create!(username: "wakka_wakka", age: 11, political_affiliation: "JavaScript", password: "password")
+  mike = User.create!(username: "like_mike", age: 11, political_affiliation: "Ruby", password: "password")
+  andy = User.create!(username: "andy_crushinit_huang", age: 11, political_affiliation: "JavaScript", password: "password")
+  jack = User.create!(username: "the_jack", age: 11, political_affiliation: "Ruby", password: "password")
+  charis = User.create!(username: "charis_the_chairis", age: 11, political_affiliation: "JavaScript", password: "password")
+  jordan = User.create!(username: "loves_pups", age: 11, political_affiliation: "JavaScript", password: "password")
+  elliot = User.create!(username: "all_knowing_elliot", age: 11, political_affiliation: "C", password: "password")
+  ryan = User.create!(username: "will_climb_rocks", age: 11, political_affiliation: "JavaScript" , password: "password")
+  charlos = User.create!(username: "charlos_gets_buckets", age: 11, political_affiliation: "Ruby", password: "password")
+  alissa = User.create!(username: "cow_luva", age: 11, political_affiliation: "JavaScript" , password: "password")
+  joe = User.create!(username: "trader_joes_4lyf3", age: 11, political_affiliation: "Ruby", password: "password")
+  big_company = User.create!(username: "instructors_rock", age: 52, political_affiliation: "Instructors", password: "password")
   
   # Chirps
   Chirp.destroy_all

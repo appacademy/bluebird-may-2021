@@ -13,7 +13,19 @@
 #  session_token         :string           not null
 #
 class User < ApplicationRecord
-    validates :username, :email, presence: true, uniqueness: true
+    validates :username, :session_token, presence: true, uniqueness: true
+    validates :password_digest, presence: true
+    validates :password, length: { minimum: 6, allow_nil: true }
+    after_initialize :ensure_session_token
+    
+    def password
+        @password
+    end
+
+    def password=(password)
+        @password = password
+        self.password_digest = BCrypt::Password.create(password)
+    end
 
     has_many :chirps,
         primary_key: :id,
@@ -28,6 +40,33 @@ class User < ApplicationRecord
     has_many :liked_chirps,
         through: :likes,
         source: :chirp
+
+    def self.find_by_credentials(username, password)
+        user = User.find_by(username: username)
+
+        if user && user.check_password?(password)
+            user
+        else
+            nil
+        end
+    end
+
+    # randomly generates a session token if the user does not have one already
+    def ensure_session_token 
+        self.session_token ||= SecureRandom::urlsafe_base64
+    end
+
+    def check_password?(password)
+        password_object = BCrypt::Password.new(self.password_digest) # creates password object from true password
+        password_object.is_password?(password) # checks given password against true password
+    end
+
+    def reset_session_token!
+        self.session_token = SecureRandom::urlsafe_base64
+        self.save! 
+        self.session_token
+    end
+
 
 
     # Find all users between the ages of 10 and 20 inclusive
