@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in? # lets us use these methods inside our views
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
   def login(user)
     # saves the user's session_token into their browser's cookies

@@ -1,12 +1,10 @@
 <h1>Create a chirp</h1>
 
 <form action="<%= chirps_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="chirp_body">Body: </label>
   <input type="text" id="chirp_body" name="chirp[body]" value="<%= @chirp.body %>">
 
-  <label>Author Id:
-    <input type="text" name="chirp[author_id]" value="<%= @chirp.author_id %>">
-  </label>
 
   <input type="submit" value="Create chirp">
 </form>

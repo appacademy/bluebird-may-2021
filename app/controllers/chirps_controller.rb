@@ -22,6 +22,7 @@ class ChirpsController < ApplicationController
   def create
     # debugger
     @chirp = Chirp.new(chirp_params)
+    @chirp.author_id = current_user.id
     if @chirp.save
       # redirect_to chirp_url(@chirp.id)
       # redirect_to "localhost:3000/chirps/#{@chirp.id}"
@@ -54,7 +55,7 @@ class ChirpsController < ApplicationController
   end
 
   def chirp_params
-    params.require(:chirp).permit(:author_id, :body)
+    params.require(:chirp).permit(:body)
   end
 
 end
