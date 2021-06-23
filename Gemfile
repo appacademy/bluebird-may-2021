@@ -63,7 +63,8 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'guard-rspec' # let's you auto-run specs when files are modified
   gem 'launchy' # automatically opens the page in the browser when we use save_and_open_page
   gem 'shoulda-matchers' # gives us some great one liner syntax for testing

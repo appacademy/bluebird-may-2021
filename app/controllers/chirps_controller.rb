@@ -28,8 +28,8 @@ class ChirpsController < ApplicationController
       # redirect_to "localhost:3000/chirps/#{@chirp.id}"
       redirect_to chirp_url(@chirp)
     else
-      # render json: @chirp.errors.full_messages, status: 422
-      render :new
+      flash.now[:errors] = @chirp.errors.full_messages
+      render :new, status: 422
     end
   end
 

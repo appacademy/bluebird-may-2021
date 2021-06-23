@@ -94,3 +94,18 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+def log_in_user(user)
+  visit new_session_url
+  fill_in('Username', with: "#{user.username}")
+  fill_in('Password', with: "password")
+  click_button('Log In')
+end
+
+def make_chirp(body)
+  visit new_chirp_url
+  fill_in('Body', with: "#{body}")
+  click_button("Create chirp")
+end
+
+
